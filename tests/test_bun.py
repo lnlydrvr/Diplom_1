@@ -3,7 +3,7 @@ from testing_data import TestingData
 import pytest
 
 class TestBun:
-    @pytest.mark.parametrize('name, price',[
+    @pytest.mark.parametrize('name, price', [
         (TestingData.BLACK_BUN_NAME, TestingData.BLACK_BUN_PRICE),
         (TestingData.WHITE_BUN_NAME, TestingData.WHITE_BUN_PRICE),
         (TestingData.RED_BUN_NAME, TestingData.RED_BUN_PRICE)
@@ -13,7 +13,7 @@ class TestBun:
         bun = Bun(name, price)
         assert bun.get_name() == name
     
-    @pytest.mark.parametrize('name, price',[
+    @pytest.mark.parametrize('name, price', [
         (TestingData.BLACK_BUN_NAME, TestingData.BLACK_BUN_PRICE),
         (TestingData.WHITE_BUN_NAME, TestingData.WHITE_BUN_PRICE),
         (TestingData.RED_BUN_NAME, TestingData.RED_BUN_PRICE)

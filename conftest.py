@@ -3,6 +3,7 @@ from tests.testing_data import TestingData
 from src.bun import Bun
 from src.ingredient import Ingredient
 from src.ingredient_types import INGREDIENT_TYPE_SAUCE, INGREDIENT_TYPE_FILLING
+from src.database import Database
 
 @pytest.fixture(scope='function')
 def bun():
@@ -18,3 +19,7 @@ def ingredient_sauce():
 def ingredient_filling():
     test_ingredient_filling = Ingredient(INGREDIENT_TYPE_FILLING, TestingData.CHILI_SAUCE_NAME, TestingData.CUTLET_FILLING_PRICE)
     return test_ingredient_filling
+
+@pytest.fixture(scope='function')
+def db():
+    return Database()
