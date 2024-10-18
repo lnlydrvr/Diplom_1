@@ -11,6 +11,7 @@ class TestBun:
     
     def test_get_name_of_the_bun_name_got(self, bun, name, price):
         bun = Bun(name, price)
+        
         assert bun.get_name() == name
     
     @pytest.mark.parametrize('name, price', [
@@ -21,4 +22,5 @@ class TestBun:
     
     def test_get_price_of_the_bun_price_got(self, bun, name, price):
         bun = Bun(name, price)
+        
         assert bun.get_price() == price

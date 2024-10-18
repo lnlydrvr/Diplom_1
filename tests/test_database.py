@@ -9,6 +9,7 @@ class TestDatabase:
     ])
     
     def test_available_buns_in_the_database_buns_are_on_the_list(self, db, bun_index, expected_available_bun_name):
+        
         assert db.available_buns()[bun_index].name == expected_available_bun_name
     
     @pytest.mark.parametrize('ingredient_index, expected_available_ingredient_name', [
@@ -21,4 +22,5 @@ class TestDatabase:
     ])
     
     def test_available_ingredients_in_the_database_ingredients_are_on_the_list(self, db, ingredient_index, expected_available_ingredient_name):
+        
         assert db.available_ingredients()[ingredient_index].name == expected_available_ingredient_name

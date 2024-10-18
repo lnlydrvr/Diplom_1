@@ -15,6 +15,7 @@ class TestBurger:
         mock.get_name.return_value = name
         mock.get_price.return_value = price
         burger.set_buns(mock)
+        
         assert burger.bun.get_name() == name and burger.bun.get_price() == price
     
     @pytest.mark.parametrize('type, name, price', [
@@ -31,6 +32,7 @@ class TestBurger:
         mock.get_name.return_value = name
         mock.get_price.return_value = price
         burger.add_ingredient(mock)
+        
         assert burger.ingredients == [mock]
     
     @pytest.mark.parametrize('ingredient_type, name, price', [
@@ -48,6 +50,7 @@ class TestBurger:
         mock.get_price.return_value = price
         burger.add_ingredient(mock)
         burger.remove_ingredient(0)
+        
         assert burger.ingredients == []
     
     @pytest.mark.parametrize('ingredient_type, name_0, price_0, name_1, price_1', [
@@ -63,6 +66,7 @@ class TestBurger:
         burger.add_ingredient(ingredient_0)
         burger.add_ingredient(ingredient_1)
         burger.move_ingredient(0, 1)
+        
         assert burger.ingredients[1].name == ingredient_0.name
         assert burger.ingredients[0].name == ingredient_1.name
         
@@ -99,6 +103,7 @@ class TestBurger:
         bun = Bun(bun_name, bun_price)
         burger.set_buns(bun)
         expected_receipt = f'(==== {bun.get_name()} ====)\n(==== {bun.get_name()} ====)\n\nPrice: {bun.get_price() * 2}'
+        
         assert burger.get_receipt() == expected_receipt
 
 
@@ -127,6 +132,7 @@ class TestBurger:
             f"(==== {bun.get_name()} ====)\n"
             f"\nPrice: {bun.get_price() * 2 + ingredient_price}"
         )
+        
         assert burger.get_receipt() == expected_receipt
 
 
@@ -164,5 +170,6 @@ class TestBurger:
             f"(==== {bun.get_name()} ====)\n"
             f"\nPrice: {bun.get_price() * 2 + ingredient_price_1 + ingredient_price_2}"
         )
+        
         assert burger.get_receipt() == expected_receipt
 

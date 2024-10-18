@@ -12,6 +12,7 @@ class TestIngredient:
     
     def test_get_price_of_the_sauce_price_got(self, ingredient_sauce, name, price):
         ingredient_sauce = Ingredient(INGREDIENT_TYPE_SAUCE, name, price)
+        
         assert ingredient_sauce.get_price() == price
     
     @pytest.mark.parametrize('name, price', [
@@ -22,6 +23,7 @@ class TestIngredient:
         
     def test_get_name_of_the_sauce_name_got(self, ingredient_sauce, name, price):
         ingredient_sauce = Ingredient(INGREDIENT_TYPE_SAUCE, name, price)
+        
         assert ingredient_sauce.get_name() == name
     
     @pytest.mark.parametrize('name, price', [
@@ -32,6 +34,7 @@ class TestIngredient:
     
     def test_get_type_of_the_sauce_type_sauce_got(self, ingredient_sauce, name, price):
         ingredient_sauce = Ingredient(INGREDIENT_TYPE_SAUCE, name, price)
+        
         assert ingredient_sauce.get_type() == INGREDIENT_TYPE_SAUCE
         
     @pytest.mark.parametrize('name, price', [
@@ -42,6 +45,7 @@ class TestIngredient:
     
     def test_get_price_of_the_filling_price_got(self, ingredient_filling, name, price):
         ingredient_filling = Ingredient(INGREDIENT_TYPE_FILLING, name, price)
+        
         assert ingredient_filling.get_price() == price
         
     @pytest.mark.parametrize('name, price', [
@@ -52,6 +56,7 @@ class TestIngredient:
     
     def test_get_name_of_the_filling_name_got(self, ingredient_filling, name, price):
         ingredient_filling = Ingredient(INGREDIENT_TYPE_FILLING, name, price)
+        
         assert ingredient_filling.get_name() == name
     
     @pytest.mark.parametrize('name, price', [
@@ -62,4 +67,5 @@ class TestIngredient:
     
     def test_get_type_of_the_filling_type_filling_got(self, ingredient_filling, name, price):
         ingredient_filling = Ingredient(INGREDIENT_TYPE_FILLING, name, price)
+        
         assert ingredient_filling.get_type() == INGREDIENT_TYPE_FILLING
