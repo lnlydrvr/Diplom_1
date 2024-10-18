@@ -4,6 +4,8 @@ from src.bun import Bun
 from src.ingredient import Ingredient
 from src.ingredient_types import INGREDIENT_TYPE_SAUCE, INGREDIENT_TYPE_FILLING
 from src.database import Database
+from src.burger import Burger
+from unittest.mock import Mock
 
 @pytest.fixture(scope='function')
 def bun():
@@ -23,3 +25,13 @@ def ingredient_filling():
 @pytest.fixture(scope='function')
 def db():
     return Database()
+
+@pytest.fixture(scope='function')
+def burger():
+    test_burger = Burger()
+    return test_burger
+
+@pytest.fixture(scope='function')
+def mock():
+    mock = Mock()
+    return mock

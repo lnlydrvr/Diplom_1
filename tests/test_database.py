@@ -1,4 +1,3 @@
-from src.database import Database
 from testing_data import TestingData
 import pytest
 
